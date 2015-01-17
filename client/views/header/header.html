@@ -1,46 +1,20 @@
 <template name="header">
 <nav class="navbar navbar-default">
   <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       
       <a class="navbar-brand" href="#">Brand</a>
     </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
+        <li><a href="#">Share</a></li>
+        <li><a href="#">Login</a></li>
+        <li><a href="#">Sign Up</a></li>
       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+    </div>
+  </div>
 </nav>
-<!--     <div class="center aligned {{isActive}} header-wrapper">
-        <h1 class="huge center aligned main ui header">
-            {{constant 'name'}}
-            <div class="sub header">
-                by <a class="unstyled link" href="http://matteodem.github.io/meteor-boilerplate">@matteodem</a>
-            </div>
-        </h1>
-        <button class="basic ui resize icon button"><i class="{{iconClass}} icon"></i></button>
 
-        {{#if showLogin}}
-        <div class="login-wrapper {{animateClass}} animated">
-            {{#if currentUser}}
-            <div class="actions-wrapper">
-                {{#if currentUser.username}}
-                <div class="hello">Hi {{currentUser.username}}!</div>
-                {{/if}}
-                <div class="ui fluid purple log-out button">
-                    <i class="sign out icon"></i>
-                    Log out
-                </div>
-            </div>
-            {{else}}
-            {{> atForm }}
-            {{/if}}
-        </div>
-        {{/if}}
-    </div> -->
 </template>
 
