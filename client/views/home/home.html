@@ -3,20 +3,18 @@
     <form class="form-horizontal">
       <div class="form-group">
         <label for="inputStart" class="col-sm-2 control-label">Start</label>
-        <div class="col-sm-4 col-lg-4">
-          <input type="start" class="form-control" id="inputStart" placeholder="Optional">
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="inputEnd" class="col-sm-2 control-label">End</label>
-        <div class="col-sm-4 col-lg-4">
-          <input type="end" class="form-control" id="inputEnd" placeholder="Optional">
+        <div class="input-daterange control-label col-sm-4 col-lg-4 input-group" id="inputStart">
+          <input type="text" class="input-md form-control" placeholder="Optional" name="start" />
+          <span class="input-group-addon">to</span> 
+          <input type="text" class="input-md form-control" placeholder="Optional" name="end" />
         </div>
       </div>
       <div class="form-group">
         <label for="inputLocation" class="col-sm-2 control-label">Location</label>
         <div class="col-sm-4 col-lg-4">
-          <input type="location" class="form-control" id="inputLocation" placeholder="Optional">
+          <input class="form-control typeahead" type="text"
+                        placeholder="Optional" autocomplete="off" spellcheck="off"
+                        data-source="cities" data-opened="opened" data-closed="closed" data-selected="selected" data-autocompleted="autocompleted">
         </div>
       </div>
       <div class="form-group">

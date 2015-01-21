@@ -25,3 +25,5 @@ meteorhacks:fast-render
 nooitaf:semantic-ui
 twbs:bootstrap
 rajit:bootstrap3-datepicker
+sergeyt:typeahead
+dburles:google-maps
