@@ -11,7 +11,6 @@ accounts-password
 aldeed:collection2
 iron:router
 raix:handlebar-helpers
-matteodem:easy-security
 audit-argument-checks
 fastclick
 zimme:iron-router-active
@@ -27,3 +26,5 @@ twbs:bootstrap
 rajit:bootstrap3-datepicker
 sergeyt:typeahead
 dburles:google-maps
+sanjo:jasmine
+velocity:html-reporter
