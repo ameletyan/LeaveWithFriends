@@ -20,6 +20,10 @@ Template.home.helpers({
 });
 
 Template.home.events({
+  "submit form": function (event) {
+    event.preventDefault();
+    Router.go('vacationPlan');
+  }
 });
 
 Template.home.rendered = function () {
