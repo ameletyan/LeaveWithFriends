@@ -1,2 +1,4 @@
 .idea/*
 .c9
+tests/jasmine/server/unit/package-stubs.js
+tests/jasmine/server/unit/packageMocksSpec.js
