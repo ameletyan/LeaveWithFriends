@@ -6,15 +6,18 @@ var Schemas = {};
 Schemas.VacationPlan = new SimpleSchema({
     name:{
         type: String,
-        label: 'Name of Vacation'
+        label: 'Name of Vacation',
+        optional: true
     },
     startDate: {
         type: Date,
-        label: 'Start Date'
+        label: 'Start Date',
+        optional: true
     },
     endDate: {
         type: Date,
-        label: 'End Date'
+        label: 'End Date',
+        optional: true
     },
     location: {
         type: Object,
@@ -36,14 +39,14 @@ Schemas.VacationPlan = new SimpleSchema({
 VacationPlans.attachSchema(Schemas.VacationPlan);
 
 // A Tutorial class that takes a document in its constructor
-VacationPlan = function (id, name, startDate, endDate, location, users, events) {
-    this._id = id;
-    this._name = name;
-    this._startDate = startDate;
-    this._endDate = endDate;
-    this._location = location;
-    this._users = users;
-    this._events = events;
+VacationPlan = function (config) {
+    this._id = config.id;
+    this._name = config.name;
+    this._startDate = config.startDate || undefined;
+    this._endDate = config.endDate || undefined; 
+    this._location = config.location || {};
+    this._users = config.users;
+    this._events = config.events;
 };
  
 VacationPlan.prototype = {
@@ -82,7 +85,10 @@ VacationPlan.prototype = {
         };
         
         VacationPlans.insert(vp, function(error, result) {
+            console.log(error);
             me._id = result;
+            return true;
         });
     }
 };
+

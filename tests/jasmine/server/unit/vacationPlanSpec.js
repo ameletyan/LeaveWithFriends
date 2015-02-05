@@ -9,7 +9,7 @@ describe("Vacation Plan", function () {
             callback(null, "1");
         });
         console.log('lol');
-        var vp = new VacationPlan('1', 'lol');
+        var vp = new VacationPlan({name: 'lol'});
  
         expect(vp.name).toBe('lol');
  
