@@ -6,5 +6,11 @@ Router.route('/', function () {
 
 Router.map(function(){
 	this.route('home')
-	this.route('vacationPlan', {path: '/vacationPlan'})
+	this.route('vacationPlan', {
+		path: '/:id',
+		data: function(){
+			var id = this.params.id;
+			return VacationPlans.findOne(id);
+		}
+	});
 });

@@ -1,6 +1,5 @@
 VacationPlans = new Mongo.Collection("vacationPlans");
 
-
 var Schemas = {};
 
 Schemas.VacationPlan = new SimpleSchema({
@@ -71,24 +70,21 @@ VacationPlan.prototype = {
     get events(){
         return this._events;
     },
-    save: function(){
+    save: function(callback){
         // remember the context since in callback it is changed
         var me = this;
         var vp = {
             name: this.name, 
             startDate: this.startDate,
             endDate: this.endDate,
-            users: this.users,
             location: this.location,
             users: this.users,
             events: this.events
         };
-        
+
         VacationPlans.insert(vp, function(error, result) {
-            console.log(error);
             me._id = result;
-            return true;
+            callback(result);
         });
     }
 };
-
