@@ -1,7 +1,10 @@
 if(Meteor.isClient) {
   Template.home.helpers({
     cities: function(query, callback){
-      
+      $.getJSON('http://gd.geobytes.com/GetCityDetails?callback=?&fqcn=' + query, 
+        function(data){
+          console.log(data);
+      });
     },
     opened: function(e) {
       console.log("dropdown is opened");
@@ -24,8 +27,8 @@ if(Meteor.isClient) {
       config.startDate = new Date(event.target[0].value);
       config.endDate = new Date(event.target[1].value);
       config.location = event.target[2].value;
-      Meteor.call('saveVacationPlan', config, function(error, data){
-        Router.go('/' + data);
+      Meteor.call('saveVacationPlan', config, function(error, result){
+        Router.go('/' + result);
       });
     }
   });
@@ -37,10 +40,7 @@ if(Meteor.isClient) {
     });
     Meteor.typeahead.inject();
   };
-
 }
-
-
 
 
 

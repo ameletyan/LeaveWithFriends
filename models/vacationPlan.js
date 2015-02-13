@@ -70,8 +70,7 @@ VacationPlan.prototype = {
     get events(){
         return this._events;
     },
-    save: function(callback){
-        // remember the context since in callback it is changed
+    save: function(){
         var me = this;
         var vp = {
             name: this.name, 
@@ -84,7 +83,6 @@ VacationPlan.prototype = {
 
         VacationPlans.insert(vp, function(error, result) {
             me._id = result;
-            callback(result);
         });
     }
 };
