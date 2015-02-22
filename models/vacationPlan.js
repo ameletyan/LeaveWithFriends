@@ -21,7 +21,8 @@ Schemas.VacationPlan = new SimpleSchema({
     location: {
         type: Object,
         label: 'Location of the vacation',
-        optional: true
+        optional: true,
+        blackbox: true
     },
     users: {
         type: [String],
