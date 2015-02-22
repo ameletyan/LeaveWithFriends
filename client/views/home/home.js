@@ -29,7 +29,7 @@ if(Meteor.isClient) {
       config.location = {
         location: event.target[2].value
       };
-      
+
       Meteor.call('saveVacationPlan', config, function(error, result){
         Router.go('/' + result);
       });

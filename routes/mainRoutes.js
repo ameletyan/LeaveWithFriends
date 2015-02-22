@@ -4,13 +4,12 @@ Router.route('/', function () {
   SEO.set({ title: 'Home - ' + Meteor.App.NAME });
 });
 
-Router.map(function(){
-	this.route('home')
-	this.route('vacationPlan', {
-		path: '/:id',
-		data: function(){
-			var id = this.params.id;
-			return VacationPlans.findOne(id);
-		}
-	});
-});
+Router.route('/:_id', {
+	name: 'vacationPlan',
+	data: function () {
+		return VacationPlans.findOne({_id: this.params._id});
+	},
+	subscriptions: function(){
+		this.subscribe('vacationPlan', this.params._id)
+	}	
+})
