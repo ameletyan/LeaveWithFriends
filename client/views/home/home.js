@@ -26,7 +26,10 @@ if(Meteor.isClient) {
       var config = {};
       config.startDate = new Date(event.target[0].value);
       config.endDate = new Date(event.target[1].value);
-      config.location = event.target[2].value;
+      config.location = {
+        location: event.target[2].value
+      };
+      
       Meteor.call('saveVacationPlan', config, function(error, result){
         Router.go('/' + result);
       });
