@@ -1,7 +1,53 @@
-  <template name="vacationPlan">
+<template name="vacationPlan">
+<!--   <ul>
+    {{location.location}}
+    {{startDate}}
+    {{endDate}}
+  </ul> -->
+	<ul class="nav nav-tabs">
+	    <li class="active"><a data-toggle="tab" href="#details">Details</a></li>
+	    <li><a data-toggle="tab" href="#transportation">Transportation</a></li>
+	    <li><a data-toggle="tab" href="#events">Events</a></li>
+	    <li><a data-toggle="tab" href="#hotels">Hotels</a></li>
+	</ul>
+	<div class="tab-content">
+	    <div id="details" class="tab-pane fade in active">
+	        <p>{{> details}}</p>
+	    </div>
+	    <div id="transportation" class="tab-pane fade">
+	        <p>{{> transportation}}</p>
+	    </div>
+	    <div id="events" class="tab-pane fade">
+	        <p>{{> Events}}</p>
+	    </div>
+	    <div id="hotels" class="tab-pane fade">
+	        <p>{{> hotels}}</p>
+	    </div>
+	</div>
+</template>
+
+<template name="details">
   <ul>
     {{location.location}}
     {{startDate}}
     {{endDate}}
+  </ul>
+</template>
+
+<template name="transportation">
+  <ul>
+    transportation page
+  </ul>
+</template>
+
+<template name="Events">
+  <ul>
+    events page
+  </ul>
+</template>
+
+<template name="hotels">
+  <ul>
+    hotels page
   </ul>
 </template>
