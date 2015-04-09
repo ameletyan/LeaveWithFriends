@@ -16,10 +16,11 @@ if(Meteor.isClient){
     "click .add": function (event) {
       event.preventDefault();
       console.log(event);
+      console.log(state);
       var trip = {}
-      // trip.startDate = event.currentTarget.form[0].value;
-      // trip.endDate = event.currentTarget.form[1].value;
-      // trip.location = event.currentTarget.form[2].value; 
+      trip.startDate = event.currentTarget.form[0].value;
+      trip.endDate = event.currentTarget.form[1].value;
+      trip.location = event.currentTarget.form[2].value; 
       state.unshift(trip);
 
       Session.set('state', state);

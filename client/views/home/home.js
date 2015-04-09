@@ -20,21 +20,21 @@ if(Meteor.isClient) {
     }
   });
 
-  // Template.home.events({
-  //   "submit form": function (event) {
-  //     event.preventDefault();
-  //     var config = {};
-  //     config.startDate = new Date(event.target[0].value);
-  //     config.endDate = new Date(event.target[1].value);
-  //     config.location = {
-  //       location: event.target[2].value
-  //     };
+  Template.home.events({
+    "submit form": function (event) {
+      event.preventDefault();
+      var config = {};
+      config.startDate = new Date(event.target[0].value);
+      config.endDate = new Date(event.target[1].value);
+      config.location = {
+        location: event.target[2].value
+      };
 
-  //     Meteor.call('saveVacationPlan', config, function(error, result){
-  //       Router.go('/' + result);
-  //     });
-  //   }
-  // });
+      Meteor.call('saveVacationPlan', config, function(error, result){
+        Router.go('/' + result);
+      });
+    }
+  });
 
   Template.home.rendered = function () {
     $('#inputStart').datepicker({
